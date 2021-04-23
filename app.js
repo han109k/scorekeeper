@@ -4,54 +4,58 @@ dropdown.addEventListener('click', function (event) {
 	dropdown.classList.toggle('is-active');
 });
 
-
 const rev = document.querySelector('#review');
+// playTo
 let finalScore = 3;
 
 const playTo = document.querySelectorAll('.dropdown-item');
 for (let plays of playTo) {
 	plays.addEventListener('click', function (event) {
-		console.log(plays.innerText);
-		rev.innerText = plays.innerText;
-		finalScore = parseInt(plays.innerText);
+		console.log(this.innerText);
+		rev.innerText = this.innerText;
+		finalScore = parseInt(this.innerText);
 	})
 }
 
-const playerOne = document.querySelector('.is-primary');
-const spanOne = document.querySelector('#one');
-let oneScore = 0;
-playerOne.addEventListener('click', function (event) {
-	console.log("Player One +");
-	oneScore++;
-	spanOne.innerText = oneScore;
-	disable(oneScore)
-})
+const playerOne = {
+	score: 0,
+	button : document.querySelector('.is-primary'),
+	display : document.querySelector('#one')
+};
 
-const playerTwo = document.querySelector('.is-info');
-const spanTwo = document.querySelector('#two');
-let twoScore = 0;
-playerTwo.addEventListener('click', function (event) {
-	console.log("Player Two +");
-	twoScore++;
-	spanTwo.innerText = twoScore;
-	disable(twoScore);
-})
+const playerTwo = {
+	score: 0,
+	button : document.querySelector('.is-info'),
+	display : document.querySelector('#two')
+};
+
+playerOne.button.addEventListener('click', () => {
+	updateScore(playerOne);
+});
+playerTwo.button.addEventListener('click', () => {
+	updateScore(playerTwo)
+});
+
+function updateScore(player) {
+	player.score++;
+	player.display.innerText = player.score;
+	disable(player.score);
+}
 
 const reset = document.querySelector('.is-danger');
-reset.addEventListener('click', resetButtons);
+reset.addEventListener('click', resetGame);
 
-function resetButtons() {
-	playerOne.removeAttribute('disabled');
-	playerTwo.removeAttribute('disabled');
-	spanOne.innerText = 0;	oneScore=0;
-	spanTwo.innerText = 0;	twoScore=0;
+function resetGame() {
+	playerOne.button.removeAttribute('disabled');
+	playerTwo.button.removeAttribute('disabled');
+	playerOne.display.innerText = 0;	playerOne.score=0;
+	playerTwo.display.innerText = 0;	playerTwo.score=0;
 }
 
 function disable(score) {
 	if(score === finalScore) {
-		playerOne.setAttribute('disabled','');
-		playerTwo.setAttribute('disabled','');
+		playerOne.button.setAttribute('disabled','');
+		playerTwo.button.setAttribute('disabled','');
+		dropdown.setAttribute('disabled','');
 	}
 }
-
-//abc.setAttribute('disabled','')

@@ -1,7 +1,7 @@
 .dropdown-content {
     background-color: #a5a58d;
     box-shadow: 6b705c;
-    width: 5rem;
+    width: 3rem;
 }
 
 .dropdown-item:hover {
@@ -14,7 +14,15 @@
 
 .buttonD {
     height: 2.5em;
-    width: 5rem;
+    width: 3rem;
     border-radius: 15%;
     border: 0.5px solid grey;
+}
+
+#one {
+    color : rgb(0,148,126);
+}
+
+#two {
+    color : rgb(244,15,53);
 }
