@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container is-fluid">
+            <div class="columns is mobile">
+                <div class="column is-6 is-offset-one-quarter">
+                    <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3784&q=80"
+                        alt="">
+                    <div class="columns">
+                        <div class="column title">
+                            Ping Pong Score Keeper
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <h1 class="title is-1"><span id="one">0</span> to <span id="two">0</span></h1>
+                            <p class="subtitle">Use the buttons below to keep score</p>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-narrow">
+                            <p class="is-size-4 has-text-weight-semibold">Playing To</p>
+                        </div>
+                        <div class="column">
+                            <div class="dropdown is-up">
+                                <div class="dropdown-trigger">
+                                    <button class="buttonD" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <span id="review">3</span>
+                                        <span class="icon is-small">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                    <div class="dropdown-content">
+                                        <div class="dropdown-item">3</div>
+                                        <div class="dropdown-item">4</div>
+                                        <div class="dropdown-item">5</div>
+                                        <div class="dropdown-item">6</div>
+                                        <div class="dropdown-item">7</div>
+                                        <div class="dropdown-item">8</div>
+                                        <div class="dropdown-item">9</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns is-mobile is-centered">
+                        <div class="column">
+                            <button class="button is-primary is-large is-fullwidth">+1 Player One</button>
+                        </div>
+                        <div class="column">
+                            <button class="button is-info is-large is-fullwidth">+1 Player Two</button>
+                        </div>
+                        <div class="column">
+                            <button class="button is-danger is-large is-fullwidth">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src=app.js></script>
+</body>
+
+</html>
